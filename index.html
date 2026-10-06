@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elizaveta | Automation Engineer & AI</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0d10;
+            color: #f2f2f2;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(11, 13, 16, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #20242a;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            font-size: 14px;
+            color: #a9afb7;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+            padding: 120px 30px 80px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .tag {
+            color: #8f98a3;
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(50px, 9vw, 100px);
+            line-height: 0.95;
+            letter-spacing: -4px;
+            margin-bottom: 30px;
+        }
+
+        .hero h2 {
+            font-size: clamp(22px, 4vw, 38px);
+            font-weight: 400;
+            color: #b7bdc5;
+            margin-bottom: 25px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: #858c95;
+            font-size: 17px;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 13px 22px;
+            border: 1px solid #343a42;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: white;
+            color: #0b0d10;
+        }
+
+        .button.primary {
+            background: white;
+            color: #0b0d10;
+        }
+
+        /* SECTIONS */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 110px 30px;
+            border-top: 1px solid #20242a;
+        }
+
+        .section-number {
+            color: #606770;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            font-size: 38px;
+            margin-bottom: 35px;
+        }
+
+        .about-text {
+            max-width: 800px;
+            color: #aeb4bc;
+            font-size: 18px;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .skill {
+            border: 1px solid #272c33;
+            padding: 22px;
+            border-radius: 8px;
+            background: #101318;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-4px);
+            border-color: #555d67;
+        }
+
+        .skill h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .skill p {
+            color: #777f89;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            gap: 20px;
+        }
+
+        .project {
+            border: 1px solid #272c33;
+            padding: 30px;
+            border-radius: 8px;
+            background: #101318;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            border-color: #555d67;
+            transform: translateY(-3px);
+        }
+
+        .project-number {
+            color: #606770;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .project h4 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #858c95;
+            margin-bottom: 18px;
+            max-width: 800px;
+        }
+
+        .technologies {
+            font-size: 13px;
+            color: #aeb4bc;
+        }
+
+        /* EDUCATION */
+
+        .education-item {
+            border-left: 1px solid #343a42;
+            padding-left: 25px;
+            margin-bottom: 35px;
+        }
+
+        .education-item h4 {
+            font-size: 21px;
+            margin-bottom: 6px;
+        }
+
+        .education-item p {
+            color: #858c95;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #858c95;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #c5cad0;
+        }
+
+        .contact-links a:hover {
+            color: white;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #555d67;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            section {
+                padding: 80px 22px;
+            }
+
+            .hero {
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="nav-container">
+
+            <div class="logo">ELIZAVETA</div>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="tag">
+                Automation Engineer · AI · Machine Learning
+            </div>
+
+            <h1>
+                ELIZAVETA
+            </h1>
+
+            <h2>
+                Engineering systems.<br>
+                Building intelligent solutions.
+            </h2>
+
+            <p class="hero-description">
+                Engineer in Control Systems with a background in industrial
+                automation, PLC programming and control systems.
+                Currently developing expertise in Artificial Intelligence,
+                Machine Learning and Neural Networks.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="button primary">
+                    View projects
+                </a>
+
+                <a href="#contact" class="button">
+                    Contact me
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-number">
+            01 — ABOUT
+        </div>
+
+        <h3>About me</h3>
+
+        <p class="about-text">
+            I am a Control Systems Engineering graduate interested in the
+            intersection of industrial automation, software engineering
+            and artificial intelligence.
+            <br><br>
+            My background includes PLC programming, industrial control
+            systems, SCADA, electronics and automation of technical processes.
+            My current professional direction is focused on expanding these
+            engineering skills with Python, Machine Learning and Neural
+            Networks.
+        </p>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-number">
+            02 — SKILLS
+        </div>
+
+        <h3>Technical skills</h3>
+
+        <div class="skills">
+
+            <div class="skill">
+                <h4>PLC Programming</h4>
+                <p>
+                    IEC 61131-3 · ST · LD · FBD · PLC logic
+                </p>
+            </div>
+
+            <div class="skill">
+                <h4>Automation</h4>
+                <p>
+                    Industrial automation · control algorithms ·
+                    technical processes
+                </p>
+            </div>
+
+            <div class="skill">
+                <h4>SCADA</h4>
+                <p>
+                    Operator interfaces · visualization · alarms ·
+                    trends · monitoring
+                </p>
+            </div>
+
+            <div class="skill">
+                <h4>Programming</h4>
+                <p>
+                    Python · C++ · algorithm development
+                </p>
+            </div>
+
+            <div class="skill">
+                <h4>Electronics</h4>
+                <p>
+                    Electrical circuits · PCB assembly ·
+                    electronic components
+                </p>
+            </div>
+
+            <div class="skill">
+                <h4>AI & Machine Learning</h4>
+                <p>
+                    Python · data analysis · Machine Learning ·
+                    Neural Networks
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="section-number">
+            03 — PROJECTS
+        </div>
+
+        <h3>Selected projects</h3>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h4>
+                    Control System for an Experimental Test Stand
+                </h4>
+
+                <p>
+                    Development of a control system for an experimental
+                    acceleration test stand. PLC-based control architecture,
+                    control algorithms and SCADA operator interface.
+                </p>
+
+                <div class="technologies">
+                    MKLogic · PLC · IEC 61131-3 · Procyon IDE ·
+                    Alpha.Platform · SCADA
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h4>
+                    Pump Unit Control System
+                </h4>
+
+                <p>
+                    Development of an automated pump control system using
+                    a PID controller, frequency converter and PLC.
+                </p>
+
+                <div class="technologies">
+                    PLC · PID · Frequency Converter · Automation
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h4>
+                    Machine Learning Projects
+                </h4>
+
+                <p>
+                    A growing collection of projects focused on data analysis,
+                    Machine Learning algorithms and neural networks.
+                </p>
+
+                <div class="technologies">
+                    Python · Pandas · NumPy · Scikit-learn
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <div class="section-number">
+            04 — EDUCATION
+        </div>
+
+        <h3>Education</h3>
+
+        <div class="education-item">
+
+            <h4>
+                Bachelor of Engineering
+            </h4>
+
+            <p>
+                Control in Technical Systems
+            </p>
+
+            <p>
+                Automation · Control Systems · Electronics ·
+                Programming
+            </p>
+
+        </div>
+
+
+        <div class="education-item">
+
+            <h4>
+                Master's Degree
+            </h4>
+
+            <p>
+                Control Systems / Intelligent Technologies
+            </p>
+
+            <p>
+                Research interests: Artificial Intelligence,
+                Machine Learning, Neural Networks and
+                Laboratory-Analytical Equipment.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <div class="section-number">
+            05 — CONTACT
+        </div>
+
+        <h3>Let's connect</h3>
+
+        <p>
+            Interested in engineering, automation, AI and
+            intelligent control systems.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="https://github.com/mezzo1776-collab">
+                GitHub
+            </a>
+
+            <a href="#">
+                Telegram
+            </a>
+
+            <a href="#">
+                Email
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        © 2026 Elizaveta · Engineering & AI
+
+    </footer>
+
+</body>
+</html>
